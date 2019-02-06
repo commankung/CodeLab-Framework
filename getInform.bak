@@ -1,0 +1,155 @@
+<?php
+session_start();
+header ("Content-Type: text/html; charset=utf-8");//set display ajax text to thai 
+header("Cache-Control: no-store, no-cache, must-revalidate"); 
+header("Cache-Control: post-check=0, pre-check=0", false); 
+
+$SI=str_replace(' ','',$_GET['SI']);
+//echo "xxx ".$SI;
+$IDP	=	0;
+
+$objConnect = mssql_connect("agrdb01","dev","dev@agrdb01");
+mssql_query("SET NAMES tis620" );
+$objDB = mssql_select_db("EFORM");
+
+$sbt = "select * from  TBL_MASTER_PRINTER where COMPANY='$SI' order by ID ASC";
+$ebt = mssql_query($sbt);
+//$rsbt = mssql_fetch_array($ebt)
+?>
+               
+<!--<div id="task-tab" class="tab-pane active">-->
+<h4 class="smaller lighter green">
+	<i class="ace-icon fa fa-list"></i>
+	Sortable Lists Location Company
+</h4>
+<!-- class:item-red,item-default,item-orange,item-blue,item-grey,item-pink,item-green --->
+<ul id="tasks" class="item-list">
+	<?php
+		while($rsbt = mssql_fetch_array($ebt))
+		{
+			$IDP++;
+	?>
+   			<li class="item-blue clearfix">
+				<label class="inline">
+					<input type="checkbox" class="ace" id="CHK_PRINTER<?php echo $rsbt['ID'];?>" value="<?php echo $rsbt['ID'];?>" onclick="DP(this.value);">
+						<span class="lbl"><?php echo $rsbt['NAME'];?></span>                        
+                        <?php
+							if($rsbt['TYPE']=="Color")
+							{
+						?>
+                 				&nbsp;&nbsp;&nbsp;&nbsp;<label style=" color:#F00;">Type Print: </label>     
+                  				<select id="TYPE_PRINT<?php echo $rsbt['ID'];?>" name="TYPE_PRINT<?php echo $rsbt['ID'];?>" class="select2" data-placeholder="Click to Choose Type Print...." style="background-color:#FF9;">
+									<option value="Black-White">Black - White</option>
+									<option value="Color">COLOR</option>
+								</select>
+               			<?php 
+               				}
+               				else 
+               				{ 
+               			?>
+               					<input type="hidden" name="TYPE_PRINT<?php echo $rsbt['ID'];?>" value="Black-White" />
+                		<?php 
+                			} 
+                		?>
+				</label>
+				<div class="pull-right easy-pie-chart percentage" data-size="30" data-color="#ECCB71" data-percent="42">
+						<?php
+							if($rsbt['TYPE']=="Color")
+							{
+						?>
+								<span class="percent" style="color:#30F;">Black-White, <?php echo $rsbt['TYPE'];?></span>
+                       <?php 
+                       		}
+                       		else
+                       		{ 
+                       	?>
+                       			<span class="percent" style="color:#30F;"><?php echo $rsbt['TYPE'];?></span>
+                       <?php 
+                       		} 
+                       ?>
+					</div>
+				<div class="form-group" style="display:none; background-color:#FFC; width:97%; margin-left:15px; margin-right:50px;" id="justification<?php echo $rsbt['ID'];?>">
+        			<h4 class="header blue lighter smaller"  style="padding-left:50px;padding-left:50px padding-top:0px; margin-top:0px;">
+						<i class="ace-icon fa fa-print smaller-90"></i>
+			 			<font color="#0033FF">Detail Printing Justification</font> 
+					</h4>
+					<div class="col-xs-12 col-sm-4"  style="padding-left:70px; padding-top:0px; margin-top:0px;">
+						<div class="clearfix">
+                			<span class="lbl">
+							<textarea style="width:310px" class="form-control limited" id="P_Just<?php echo $rsbt['ID'];?>" maxlength="140">P_Just<?php echo $rsbt['ID'];?></textarea>
+                   			<br/>
+						</div>
+					</div>
+				</div>
+			</li>         
+	<?php 
+		} 
+	?>
+            <!--
+			<li class="item-orange clearfix">
+					<label class="inline">
+						<input type="checkbox" class="ace" id="CHK_PRINTER" >
+						<span class="lbl">Fuji Xerox DCC2060 (AH Office, 1 Fl.)</span>
+					</label>
+					<div class="pull-right easy-pie-chart percentage" data-size="30" data-color="#ECCB71" data-percent="42">
+						<span class="percent">Black - White</span>
+					</div>
+				</li>
+				<li class="item-red clearfix">
+					<label class="inline">
+						<input type="checkbox" class="ace" id="CHK_PRINTER">
+						<span class="lbl">Fuji Xerox DCC3370 (AH Office, 2 Fl.) </span>
+					</label>
+					<div class="pull-right easy-pie-chart percentage" data-size="30" data-color="#ECCB71" data-percent="42">
+						<span class="percent">Color</span>
+					</div>
+				</li>
+				<li class="item-default clearfix">
+					<label class="inline">
+						<input type="checkbox" class="ace" id="CHK_PRINTER">
+						<span class="lbl">Fuji Xerox DCC3370 (AH Office, 3 Fl.)</span>
+					</label>
+					<div class="pull-right easy-pie-chart percentage" data-size="30" data-color="#ECCB71" data-percent="42">
+						<span class="percent">Color</span>
+					</div>
+				</li>
+				<li class="item-blue clearfix">
+					<label class="inline">
+						<input type="checkbox" class="ace" id="CHK_PRINTER">
+						<span class="lbl">Fuji Xerox AP6000 (AHP Office 2 Fl.)</span>
+					</label>
+					<div class="pull-right easy-pie-chart percentage" data-size="30" data-color="#ECCB71" data-percent="42">
+						<span class="percent">Black - White</span>
+					</div>
+				</li>
+				<li class="item-grey clearfix">
+					<label class="inline">
+						<input type="checkbox" class="ace" id="CHK_PRINTER">
+						<span class="lbl">Fuji Xerox AP6000 (AHP Office 2 Fl.)</span>
+					</label>
+					<div class="pull-right easy-pie-chart percentage" data-size="30" data-color="#ECCB71" data-percent="42">
+						<span class="percent">Black - White</span>
+					</div>
+				</li>
+				<li class="item-green clearfix">
+					<label class="inline">
+						<input type="checkbox" class="ace" id="CHK_PRINTER">
+						<span class="lbl">Fuji Xerox DCC6000 (AH Production.) </span>
+					</label>
+					<div class="pull-right easy-pie-chart percentage" data-size="30" data-color="#ECCB71" data-percent="42">
+						<span class="percent">Black - White</span>
+					</div>
+				</li>
+				<li class="item-pink clearfix">
+					<label class="inline">
+						<input type="checkbox" class="ace" id="CHK_PRINTER">
+						<span class="lbl">Konica Minolta C252 (AITS) </span>
+					</label>
+					<div class="pull-right easy-pie-chart percentage" data-size="30" data-color="#ECCB71" data-percent="42">
+						<span class="percent">Black - White</span>
+					</div>
+				</li>	
+                -->			
+			</ul>
+		<!--</div>-->
+

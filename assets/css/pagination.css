@@ -1,0 +1,98 @@
+/* Pagination */
+
+.paging {
+width:270px;
+clear:both;
+padding:6px 0;
+line-height:17px;
+font-size:13px;
+}
+ 
+.paging span, .paging a {
+display:block;
+float:left;
+margin: 2px 2px 2px 0;
+padding:5px 8px;
+text-decoration:none;
+width:auto;
+color:#666;
+background: #fff;
+border:1px solid #ddd;
+font-weight:normal;
+}
+ 
+.paging a:hover{
+color:#fff;
+}
+ 
+.paging .current{
+padding:5px 8px;
+color:#fff;
+}
+
+/* 404 Page */
+
+.error-page .big-text{
+	font-size: 170px;
+	line-height: 180px;
+	color: #999;
+}
+
+/* Item review */
+
+.nav-tabs{
+	margin-bottom: 5px;
+}
+
+.item-review{
+	background: #fafafa;
+	margin: 10px 0px;
+	border-radius: 5px;
+	border: 1px solid #eee;
+	padding: 10px;
+}
+
+.item-review .rmeta{
+	font-style: italic;
+}
+
+/* Careers */
+
+.career .nav > li{
+background:none;
+padding:0px;
+list-style-type: none;
+}
+
+.nav-tabs > li > h6 > a:hover{
+	color:#fff;
+}
+
+
+/* Sidebar page navigation */
+
+#navi{
+	margin: 0px;
+	padding: 0px;
+}
+
+#navi li {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+#navi > li > a { 
+  display: block; 
+  padding: 10px 10px;
+  color: #777;
+  text-decoration: none;
+  border-bottom: 1px solid #eee;
+  background-color: #fafafa;
+}
+
+#navi > li > a:hover{ 
+  color: #666;
+  background-color: #f3f3f3;
+  border-bottom: 1px solid #ddd;
+}

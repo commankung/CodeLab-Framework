@@ -1,0 +1,323 @@
+
+<div class="main-content" onload="">
+				<div class="main-content-inner">
+					<div class="breadcrumbs" id="breadcrumbs">
+						<script type="text/javascript">
+							try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+						</script>
+
+						<ul class="breadcrumb">
+							<li>
+								<i class="ace-icon fa fa-pencil-square-o home-icon"></i>
+								<a href="#">Form Requisition</a>
+							</li>
+							<li class="active">IT Requisition</li>
+						</ul><!-- /.breadcrumb -->
+					</div>
+
+					<div class="page-content">
+						<div class="row">
+							<div class="col-xs-12">
+
+								<div class="widget-box">
+									<div class="widget-header widget-header-blue widget-header-flat">
+										<h4 class="widget-title lighter">IT Requisition</h4>
+									</div>
+
+									<div class="widget-body">
+										<div class="widget-main">
+											<div class="step-pane" data-step="4">
+		<!--------------------- Start  Detail Symbol ----------------------->
+
+	<div class="row">
+		<div class="col-xs-10">
+			<div class="timeline-container">
+			
+				<!--------- Flag Internet Level ------->
+				<div class="timeline-label">
+					<span class="label label-success arrowed-in-right label-lg">
+						<b>IT Function Description </b>
+					</span>
+				</div>
+				
+				<!--------- Detail Choose User ---------->
+				<div class="timeline-items">
+					<div class="timeline-item clearfix">
+						<div class="timeline-info">
+							<i class="timeline-indicator ace-icon fa fa-user btn btn-inverse no-hover"></i>
+						</div>
+						<div class="widget-box widget-color-grey">
+							<div class="widget-header widget-header-small">
+								<h5 class="widget-title smaller">User</h5>
+							</div>
+						</div>
+					</div>
+				</div><!-- /.timeline-items -->
+
+				
+				<!--------- Detail Choose Email ---------->
+				<div class="timeline-items">
+					<div class="timeline-item clearfix">
+						<div class="timeline-info">
+							<i class="timeline-indicator ace-icon fa fa-envelope-o btn btn-danger no-hover"></i>
+						</div>
+						<div class="widget-box widget-color-red2">
+							<div class="widget-header widget-header-small">
+								<h5 class="widget-title smaller">Email</h5>
+							</div>
+						</div>
+					</div>
+				</div><!-- /.timeline-items -->
+				
+				<!--------- Detail Choose Internet Level ---------->
+				<div class="timeline-items">
+					<div class="timeline-item clearfix">
+						<div class="timeline-info">
+							<i class="timeline-indicator ace-icon fa fa-google btn btn-primary no-hover"></i>
+						</div>
+						<div class="widget-box widget-color-blue2">
+							<div class="widget-header widget-header-small">
+								<h5 class="widget-title smaller">Internet </h5>
+							</div>
+						</div>
+					</div>
+				</div><!-- /.timeline-items -->
+				
+				<!--------- Detail Choose Printer ---------->
+				<div class="timeline-items">
+					<div class="timeline-item clearfix">
+						<div class="timeline-info">
+							<i class="timeline-indicator ace-icon fa fa-print btn btn-success no-hover"></i>
+						</div>
+						<div class="widget-box widget-color-green2">
+							<div class="widget-header widget-header-small">
+								<h5 class="widget-title smaller">Printer </h5>
+							</div>
+						</div>
+					</div>
+				</div><!-- /.timeline-items -->
+				
+				<!--------- Detail Choose Removable Media ---------->
+				<div class="timeline-items">
+					<div class="timeline-item clearfix">
+						<div class="timeline-info">
+							<i class="timeline-indicator ace-icon fa fa-hdd-o btn btn-purple no-hover"></i>
+						</div>
+						<div class="widget-box widget-color-purple">
+							<div class="widget-header widget-header-small">
+								<h5 class="widget-title smaller">Removable Device</h5>
+							</div>
+						</div>
+					</div>
+				</div><!-- /.timeline-items -->
+				
+				<!--------- Detail Choose Telephone Passcode ---------->
+				<div class="timeline-items">
+					<div class="timeline-item clearfix">
+						<div class="timeline-info">
+							<i class="timeline-indicator ace-icon fa fa-phone btn btn-pink no-hover"></i>
+						</div>
+						<div class="widget-box widget-color-pink">
+							<div class="widget-header widget-header-small">
+								<h5 class="widget-title smaller">Telephone Passcode</h5>
+							</div>
+						</div>
+					</div>
+				</div><!-- /.timeline-items -->
+				
+				<!--------- Detail Choose VPN ---------->
+				<div class="timeline-items">
+					<div class="timeline-item clearfix">
+						<div class="timeline-info">
+							<i class="timeline-indicator ace-icon fa fa-globe btn btn-danger no-hover"></i>
+						</div>
+						<div class="widget-box widget-color-red">
+							<div class="widget-header widget-header-small">
+								<h5 class="widget-title smaller">VPN (Virtual Private Network)</h5>
+							</div>
+						</div>
+					</div>
+				</div><!-- /.timeline-items -->
+
+
+
+
+
+
+		</div><!-- /.timeline-container -->
+		<!--------------------- End  Detail Symbol ----------------------->
+		</div>
+	</div>
+	
+	<!--------------------- Start Select Print ----------------------->
+	<form class="form-horizontal " id="Form_printing" name="Form_printing" action="index.php?Menu=IT-Flow-Requisition" method="post">
+		<h3 class="header blue lighter smaller">
+			<i class="ace-icon fa fa-laptop smaller-90"></i>
+			IT Function Requisition 
+		</h3>
+		<div id="task-tab" class="tab-pane active">
+			<h4 class="smaller lighter green">
+				<i class="ace-icon fa fa-list"></i>
+				Sortable Lists IT Function
+			</h4>
+			<!-- class:item-red,item-default,item-orange,item-blue,item-grey,item-pink,item-green --->
+			<ul id="tasks" class="item-list">
+				
+				<!-------------------- User -------------------->
+				<li class="item-grey clearfix">
+					<label class="inline">
+						<input type="checkbox" id="CHK_IT1" name="CHK_IT[]" value="USER" class="ace" onclick="ChkListIT();" >
+						<span class="lbl">&nbsp;&nbsp;&nbsp;User</span>
+					</label>&nbsp;
+					<div class="pull-right easy-pie-chart percentage" data-size="30" data-color="#ECCB71" data-percent="42">
+						<span class="percent"></span>
+					</div>
+				</li>
+				
+				<!-------------------- Email -------------------->
+				<li class="item-red clearfix">
+					<label class="inline">
+						<input type="checkbox" id="CHK_IT2" name="CHK_IT[]" value="EMAIL" class="ace" onclick="ChkListIT();" >
+						<span class="lbl">&nbsp;&nbsp;&nbsp;Email</span>
+					</label>&nbsp;
+					<div class="pull-right easy-pie-chart percentage" data-size="30" data-color="#ECCB71" data-percent="42">
+						<span class="percent"></span>
+					</div>
+				</li>
+				
+				<!-------------------- Internet ------------------------->
+				<li class="item-blue clearfix">
+					<label class="inline">
+						<input type="checkbox" id="CHK_IT3" name="CHK_IT[]" value="Internet" class="ace" onclick="ChkListIT();" >
+						<span class="lbl">&nbsp;&nbsp;&nbsp;Internet</span>
+					</label>
+					<div class="pull-right easy-pie-chart percentage" data-size="30" data-color="#ECCB71" data-percent="42">
+						<span class="percent"></span>
+					</div>
+				</li>
+				
+				<!-------------------- Printer ------------------------->
+				<li class="item-green clearfix">
+					<label class="inline">
+						<input type="checkbox" id="CHK_IT4" name="CHK_IT[]" value="Printer" class="ace" onclick="ChkListIT();" >
+						<span class="lbl">&nbsp;&nbsp;&nbsp;Printer</span>
+					</label>
+					<div class="pull-right easy-pie-chart percentage" data-size="30" data-color="#ECCB71" data-percent="42">
+						<span class="percent"></span>
+					</div>
+				</li>
+				
+				<!-------------------- Removabe USB ------------------------->
+				<li class="item-purple clearfix">
+					<label class="inline">
+						<input type="checkbox" id="CHK_IT5" name="CHK_IT[]" value="REUSB" class="ace" onclick="ChkListIT();" >
+						<span class="lbl">&nbsp;&nbsp;&nbsp;Removable Device</span>
+					</label>
+					<div class="pull-right easy-pie-chart percentage" data-size="30" data-color="#ECCB71" data-percent="42">
+						<span class="percent"></span>
+					</div>
+				</li>
+				
+				<!-------------------- Telephone Passcode ------------------------->
+				<li class="item-pink clearfix">
+					<label class="inline">
+						<input type="checkbox" id="CHK_IT6" name="CHK_IT[]" value="Telephone" class="ace" onclick="ChkListIT();" >
+						<span class="lbl">&nbsp;&nbsp;&nbsp;Telephone Passcode</span>
+					</label>
+					<div class="pull-right easy-pie-chart percentage" data-size="30" data-color="#ECCB71" data-percent="42">
+						<span class="percent"></span>
+					</div>
+				</li>
+				
+				<!-------------------- VPN (Vitual Private Network) ------------------------->
+				<li class="item-orange clearfix">
+					<label class="inline">
+						<input type="checkbox" id="CHK_IT7" name="CHK_IT[]" value="VPN" class="ace" onclick="ChkListIT();" >
+						<span class="lbl">&nbsp;&nbsp;&nbsp;VPN (Virtual Private Network)</span>
+					</label>
+					<div class="pull-right easy-pie-chart percentage" data-size="30" data-color="#ECCB71" data-percent="42">
+						<span class="percent"></span>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<br>
+	</form>
+</div>
+											
+											
+											<hr />
+											<div class="wizard-actions">
+
+												<button id="btnSubmitLitITs" name="btnSubmitLitITs" class="btn btn-success btn-next" onclick="document.Form_printing.submit();" >
+													Submit
+													<i class="ace-icon fa fa-arrow-right icon-on-right"></i>
+												</button>
+											</div>
+										</div><!-- /.widget-main -->
+									</div><!-- /.widget-body -->
+								</div>
+							</div><!-- /.col -->
+						</div><!-- /.row -->
+					</div><!-- /.page-content -->
+				</div>
+			</div><!-- /.main-content -->
+
+			
+
+<!-- basic scripts -->
+<!--[if !IE]> -->
+	<script src="assets/js/jquery.2.1.1.min.js"></script>
+<!-- <![endif]-->
+<!--[if IE]>
+	<script src="assets/js/jquery.1.11.1.min.js"></script>
+<![endif]-->
+<!--[if !IE]> -->
+	<script type="text/javascript">
+		window.jQuery || document.write("<script src='assets/js/jquery.min.js'>"+"<"+"/script>");
+	</script>
+<!-- <![endif]-->
+<!--[if IE]>
+	<script type="text/javascript">
+	 window.jQuery || document.write("<script src='assets/js/jquery1x.min.js'>"+"<"+"/script>");
+	</script>
+<![endif]-->
+<script type="text/javascript">
+	if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+</script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	
+	<!-- page specific plugin scripts -->
+	<script src="assets/js/fuelux.wizard.min.js"></script>
+	<script src="assets/js/jquery.validate.min.js"></script>
+	<script src="assets/js/additional-methods.min.js"></script>
+	<script src="assets/js/bootbox.min.js"></script>
+	<script src="assets/js/jquery.maskedinput.min.js"></script>
+	<script src="assets/js/select2.min.js"></script>
+
+	<!-- ace scripts -->
+	<script src="assets/js/ace-elements.min.js"></script>
+	<script src="assets/js/ace.min.js"></script>
+		
+	<!--[if lte IE 8]>
+	<script src="assets/js/excanvas.min.js"></script>
+	<![endif]-->
+	<script src="assets/js/jquery-ui.custom.min.js"></script>
+	<script src="assets/js/jquery.ui.touch-punch.min.js"></script>
+	<script src="assets/js/chosen.jquery.min.js"></script>
+	<script src="assets/js/fuelux.spinner.min.js"></script>
+	<script src="assets/js/bootstrap-datepicker.min.js"></script>
+	<script src="assets/js/bootstrap-timepicker.min.js"></script>
+	<script src="assets/js/moment.min.js"></script>
+	<script src="assets/js/daterangepicker.min.js"></script>
+	<script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+	<script src="assets/js/bootstrap-colorpicker.min.js"></script>
+	<script src="assets/js/jquery.knob.min.js"></script>
+	<script src="assets/js/jquery.autosize.min.js"></script>
+	<script src="assets/js/jquery.inputlimiter.1.3.1.min.js"></script>
+	<script src="assets/js/jquery.maskedinput.min.js"></script>
+	<script src="assets/js/bootstrap-tag.min.js"></script>
+
+		<!-- inline scripts related to this page -->
+		
+		

@@ -1,0 +1,8 @@
+﻿@import url('stylesheet.css');
+
+body{ font-family:'thai_sans_literegular';  }
+span{ font-style: normal;}
+b{ font-size:22px; font-style:normal}
+table.fontusedcar{ font-style: normal; font-weight:bold }
+td{ font-size:16px; font-style:normal}
+fieldset b{ font-size:20px; font-style:normal }
